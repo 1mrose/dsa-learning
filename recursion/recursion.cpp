@@ -27,6 +27,15 @@ int sum(int n){
     }
  }
 
+ //getting power of an number using recursion
+ int power(int x, int y){
+    if(y==0)
+        return 0;
+    else return power(x,y-1)*x;
+ }
+
+
+
 int main(){
 
 // getting sum of n natural numbers using recursion
@@ -35,6 +44,11 @@ int main(){
 // getting factorial of a nummber using recursion
     cout<<"factorial of n is: "<<factorial(5)<<endl;
 
+
+ //getting power of an number using recursion
+  int p;
+  p = power(4,4);
+  cout<<" power is:"<< p<< endl;
 
 
     return 0;
