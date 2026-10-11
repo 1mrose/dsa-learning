@@ -6,7 +6,7 @@
 #include <utility>
 #include <cstring>
 using namespace std;
-
+ 
 // getting sum of n natural numbers using recursion
 int sum(int n){    
     if(n==0){
