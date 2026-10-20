@@ -39,6 +39,7 @@ int NCR(int n,int r)
 int main (){
 
     cout<<NCR(5,3)<<endl;
+    cout<<"=================================================="<<endl;
     cout<<nCr(5,3)<<endl;
 
     return 0;
