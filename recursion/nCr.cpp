@@ -7,13 +7,14 @@
 #include <cstring>
 using namespace std;
 
+//factorial
 int fact(int n)
 {
     if(n==0)return 1;
     return fact(n-1)*n;
 }
 
-
+//nCr using recursion
 int nCr(int n,int r)
 {
     int num,den;
