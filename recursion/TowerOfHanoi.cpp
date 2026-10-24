@@ -18,10 +18,9 @@ void TOH (int n, int a, int b, int c){
 
 
 int main (){
+
     TOH(4,1,2,3);
     
-
-
     return 0;
 
 }

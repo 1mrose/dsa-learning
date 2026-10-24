@@ -7,6 +7,7 @@
 #include <cstring>
 using namespace std;
 
+//inserting, appending and deleting from an array
 
 int length =5;
 
@@ -40,28 +41,24 @@ int del(int *a, int index){
             x=a[i];
             a[i]=a[i+1];
         }
-        length--;
-        
+        length--;      
     }
     return x;
 }
 
 
 int main(){
-     int a[10]={1,2,43,25,66};
+    int a[10]={1,2,43,25,66};
      
-     display(a, length);
+    display(a, length);
     cout<<endl;
 
     insert(a,0,57);
     display(a, length);
     cout<<endl;
+
     del(a,0);
-         display(a, length);
-
-
-
-
+    display(a, length);
 
     return 0;
 }
