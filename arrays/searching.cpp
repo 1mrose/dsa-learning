@@ -9,6 +9,14 @@ using namespace std;
 
 int length = 6;
 
+
+void swap(int *x, int *y){
+    int temp;
+    temp =*x;
+    *x=*y;
+    *y=temp;
+}
+
 void display(int a[], int length){
     int i;
     for (i=0;i<length;i++){
@@ -20,11 +28,15 @@ int linearSrch(int a[], int key){
     int i;
     for(i=0;i<length;i++){
         if(a[i]==key){
-            return i;
+            swap(a[i],a[i-1]);
+            //swapping the key element w the previous element 
+            return i-1;
         }
     }
     return -1;
 }
+
+
 
 
 int main(){
@@ -34,8 +46,8 @@ int main(){
     cout<<endl;
 
     int pos = linearSrch(a,54);
-    cout<<pos;
-
+    cout<<pos<<endl;
+    display(a,6);
 
     return 0;
 }
