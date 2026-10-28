@@ -1,0 +1,7 @@
+
+# Ignore compiled C++ executables
+*.exe
+
+# Ignore object files
+*.o
+*.obj
