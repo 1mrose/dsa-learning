@@ -72,7 +72,7 @@ int main (){
     display(a,length);
     cout<<endl<<"========================"<<endl;
 
-    insertsort(a,length,9); //insert fucn not working
+    insertsort(a,length,9); 
     display(a,length);
      
     return 0;
