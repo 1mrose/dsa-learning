@@ -150,13 +150,12 @@ void find_dup_unsorted(int element){
 
 int main(){
 
-    Array a(10,10,true);
+    Array a(9,9,true);
     a.display();
     int x= a.findpos(1);
     cout<<endl<<x<<endl<<endl;
- //   a.find_dup(3);
- a.find_dup_unsorted(3);
-
+//  a.find_dup(3);
+    a.find_dup_unsorted(3);
 
     return 0;
 }
