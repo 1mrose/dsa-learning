@@ -49,6 +49,7 @@ class Array{
         if (index >= 0 && index < length){
             return A[index];
         }
+        return -1;
     }
 
     Array merge(Array &b){
@@ -73,9 +74,9 @@ class Array{
     }
 
 
-//---------------------------------------------------------------
+//-----------------------finding function----------------------------------------
 
- int find( int element){
+ int findpos( int element){
 
     int i;
     for(i=0;i<this->length;i++){
@@ -89,7 +90,21 @@ class Array{
     return -1;
  } 
 
-//---------------------------------------------------------------
+//---------------------finding duplicate elements in array------------------------
+
+void find_dup (int element){
+    int i,j;
+    for (i=0;i<this->length-1;i++){
+        if(this->get(i)==this->get(i+1)){
+            j=i+1;
+                while(this->get(j)==this->get(i)){
+                    j++;
+                }
+            cout<<get(i)<<" element is "<<j-i<<"times in the array"<<endl;
+            i=j-1;
+        }
+    }
+}
 
 
     ~Array(){
@@ -99,9 +114,13 @@ class Array{
 };
 
 int main(){
- Array a(10,5,true);
- a.display();
- int x= a.find(1);
- cout<<endl<<x;
+
+    Array a(10,10,true);
+    a.display();
+    int x= a.findpos(1);
+    cout<<endl<<x<<endl;
+    a.find_dup(3);
+
+
     return 0;
 }
