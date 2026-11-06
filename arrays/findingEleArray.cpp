@@ -90,7 +90,7 @@ class Array{
     return -1;
  } 
 
-//---------------------finding duplicate elements in array------------------------
+//------------finding duplicate elements in a sorted array------------------------
 
 void find_dup (int element){
     int i,j;
@@ -100,12 +100,47 @@ void find_dup (int element){
                 while(this->get(j)==this->get(i)){
                     j++;
                 }
-            cout<<get(i)<<" element is "<<j-i<<"times in the array"<<endl;
+            cout<<get(i)<<" is "<<j-i<<"times in this array"<<endl;
             i=j-1;
         }
     }
 }
 
+//------------finding duplicate elements in a unsorted array------------------------
+
+int max(){
+    int m=this->get(0);
+    int i;
+    for(i=0;i<this->length;i++){
+        if(m<this->get(i)){
+            m=this->get(i);
+        }
+    }
+    return m;
+
+}
+
+void find_dup_unsorted(int element){
+
+    int *ptr = new int[this->max()]{};
+    int i;
+    
+    for(i=0;i<this->length;i++){
+        if( ptr[this->get(i)]>=1){
+            ptr[this->get(i)]++;
+        }
+        else
+            ptr[this->get(i)]=1;
+    }
+    for(i=0;i<this->max();i++){
+        if( ptr[this->get(i)]>1){
+            cout<<this->get(i)<<" is "<<ptr[this->get(i)]<< " times in the array"<<endl;
+            ptr[this->get(i)] = 0;
+        }
+    }
+
+
+}
 
     ~Array(){
         delete[] A;
@@ -118,8 +153,9 @@ int main(){
     Array a(10,10,true);
     a.display();
     int x= a.findpos(1);
-    cout<<endl<<x<<endl;
-    a.find_dup(3);
+    cout<<endl<<x<<endl<<endl;
+ //   a.find_dup(3);
+ a.find_dup_unsorted(3);
 
 
     return 0;
